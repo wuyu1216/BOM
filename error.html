@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>404</title>
+</head>
+<body>
+<style>
+    body,h3,p{
+        margin:0;
+        padding:0;
+    }
+    .box{
+        width: 100vw;
+        height: 100vh;
+        background: -webkit-linear-gradient(right,#00E3EA,#91D0EA);
+    }
+    main{
+        width: 300px;
+        height: 160px;
+        background-color: #A2E7F4;
+        position: absolute;
+        top:0;
+        bottom:0;
+        left:0;
+        right:0;
+        margin:auto;
+        border-radius: 20px;
+        padding:20px;
+    }
+    h3{
+        margin-top: 10px;
+    }
+    p,h3{
+        text-align: center;
+    }
+    p{
+        margin: 20px 0;
+    }
+    span{
+        color:red;
+        font-size: 20px;
+    }
+    input[type='submit']{
+        display: block;
+        width: 80px;
+        height: 30px;
+        background-color: dodgerblue;
+        border-radius: 10px;
+        outline: none;
+        border:0;
+       margin:0 auto;
+        background:-webkit-linear-gradient(left,#85D0EB,#00E5EC);
+    }
+</style>
+<div class="box">
+    <main>
+        <h3>出错了!</h3>
+        <p><span>5</span>s后将返回登录页面</p>
+        <input type="submit" value="返回" class="submit">
+    </main>
+</div>
+</body>
+</html>
+<script>
+    let span = document.querySelector('span');
+    let submit = document.querySelector('.submit');
+    let num = 5;
+    var t = setInterval(function () {
+        span.innerText =num;
+        num--;
+        if(num<0){
+            clearInterval(t);
+            location.replace('denglu.html');
+        }
+    },1000)
+        submit.onclick=function () {
+            location.replace('denglu.html');
+        }
+
+</script>

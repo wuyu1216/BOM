@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<style>
+    body{
+        margin:0;
+        padding:0;
+    }
+    .box{
+        width: 100vw;
+        height: 100vh;
+        background: -webkit-linear-gradient(right,#00E3EA,#91D0EA);
+    }
+    .link{
+        width: 100px;
+        height: 50px;
+        background-color:dodgerblue;
+        position: absolute;
+        top:0;
+        right: 50px;
+        border-radius: 30px;
+        text-align: center;
+        line-height: 50px;
+    }
+    main{
+        width: 300px;
+        height: 160px;
+        background-color: #A2E7F4;
+        position: absolute;
+        top:0;
+        bottom:0;
+        left:0;
+        right:0;
+        margin:auto;
+        border-radius: 20px;
+        padding:20px;
+    }
+    label{
+        display: block;
+        margin-top: 10px;
+        margin-bottom: 5px;
+        font-size: 16px;
+    }
+    input[type='username']{
+        outline: none;
+    }
+    input{
+        width: 200px;
+        height: 20px;
+        border-radius: 5px;
+        outline: none;
+        border:1px solid #00D9DD;
+        background:-webkit-linear-gradient(left,#85D0EB,#00E5EC);
+        padding-left: 10px;
+    }
+    input[type='submit']{
+        display: block;
+        width: 80px;
+        height: 30px;
+        margin-top: 13px;
+        border-radius: 10px;
+        /*outline: none;*/
+        /*border:0;*/
+    }
+</style>
+   <div class="box">
+       <main>
+           <label for="">用户名:</label>
+           <input type="text" placeholder="请输入用户名" name="username" autofocus="true" class="username">
+           <label for="">密  码 :</label>
+           <input type="password" placeholder="请输入密码" name="pass" autofocus="true" class="pass">
+           <input type="submit" value="登录" class="submit">
+       </main>
+       <a href="index.html">
+           <div class="link">链接</div>
+       </a>
+
+   </div>
+</body>
+</html>
+<script>
+    window.onload=function () {
+        let username = document.querySelector('.username');
+        let pass = document.querySelector('.pass');
+        var submit = document.querySelector('.submit');
+        submit.onclick=function () {
+            if(username.value.trim()=='admin' && pass.value.trim()=='12345'){
+                alert('登录成功');
+            }else{
+                location.replace('error.html');
+            }
+        }
+    }
+
+
+
+</script>
