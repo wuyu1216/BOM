@@ -33,7 +33,7 @@
         font-weight: 400;
         transition: all 1s;
         /*display: none;*/
-        opacity=0;
+        opacity:0;
 
 
     }
@@ -46,7 +46,8 @@
 <script>
         var Top = document.querySelector('.Top');
         window.onscroll=function () {
-            if (window.scrollY > 200) {
+            var scrollTop = document.documentElement.scrollTop || document.body.scrollTop;
+            if (scrollTop> 200) {
                 Top.style.opacity=1;
                 Top.style.width = "80px";
             } else {
@@ -61,7 +62,7 @@
             if(window.scrollY==0){
                 clearInterval(t);
             }
-        },20)
+        },50)
 
     }
 </script>

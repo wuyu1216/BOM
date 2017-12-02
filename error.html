@@ -65,11 +65,9 @@
 <script>
     let span = document.querySelector('span');
     let submit = document.querySelector('.submit');
-    let num = 5;
     var t = setInterval(function () {
-        span.innerText =num;
-        num--;
-        if(num<0){
+        span.innerText--;
+        if(span.innerText<1){
             clearInterval(t);
             location.replace('denglu.html');
         }
